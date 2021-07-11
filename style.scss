@@ -1,0 +1,197 @@
+.page-wrap {
+    height: 100vh;
+    width: 100vw;
+    background: linear-gradient(to right, rgb(182, 244, 146), rgb(51, 139, 147));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: "roboto"; 
+    overflow-y: hidden;
+
+
+}
+body{
+    overflow: hidden;
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+header{
+    border-radius: 6px;
+    z-index: 100000;
+}
+.presentation-double{
+    position: absolute;
+    background-color: green;
+    opacity: 0.1;
+    width: 500px;
+    height: 100vh;
+    left: 90px;
+    border-radius: 5px;
+    z-index: 10;
+}
+.presentation{
+    z-index: 10000000;
+}
+.bubble2{
+    width: 100px;
+    height: 100px;
+    border-radius: 10%;
+    background-color: white;
+    opacity: 0.2;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    animation: anim2 13s infinite alternate;
+}
+@keyframes anim2 {
+    from {
+        transform: translateY(200px) rotate(20deg);
+        
+
+    }
+    to{
+        transform: translateY(-800px) rotate(100deg);
+
+
+    }
+}
+.bubble{
+    width: 100px;
+    height: 100px;
+    border-radius: 10%;
+    background-color: white;
+    opacity: 0.3;
+    position: absolute;
+    bottom: 0;
+    animation: anim 12s infinite alternate ease-in-out;
+}
+@keyframes anim {
+    from {
+        transform: translateY(200px);
+
+    }
+    to{
+        transform: translateY(-700px);
+
+    }
+}
+nav {
+    list-style-type: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 460px;
+    background-color: white;
+    padding: 20px;
+    margin-right: 10px;
+
+    li{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin: 30px 0;
+    }
+        img{
+            width: 20px;
+            height: 20px;
+        }
+}
+
+main {
+    width: 500px;
+    background-color: white;
+    height: 600px;
+    display: flex;
+    border-radius: 5px;
+    z-index: 10000;
+    box-shadow: 4px 7px 20px -2px rgba(0,0,0,0.48);
+ 
+
+    .information-candidat {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+
+        h2 {
+            margin: 0px;
+            font-size: 19px;
+        }
+
+        h1 {
+            margin: 10px 0 0 0;
+        }
+    }
+
+    .profil {
+        width: 500px;
+        height: 400px;
+        overflow: hidden;
+
+        img {
+            border-radius: 5px;
+            zoom: -10px;
+            width: 101%;
+            height: 105%;
+            object-fit: cover;
+            clip-path: polygon(0% 0%, 100% 0%, 100% 95%, 51% 100%, 0% 61%);
+            
+        }
+    }
+
+    .online-reseau {
+        display: flex;
+        justify-content: center;
+
+        img {
+            width: 26px;
+            height: 26px;
+            margin: 15px 8px 0;
+            transition: 0.5s;
+            &:hover{
+                opacity: 0.4;
+                color: red;
+                overflow: hidden;
+            }
+        }
+    }
+}
+
+aside {
+    width: 700px;
+    background-color: white;
+    height: 550px;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    z-index: 100;
+}
+
+.contact-bloc {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    margin-top: 26px;
+    padding: 0 1px;
+
+    a {
+        display: flex;
+        justify-content: center;
+        border-width: 0.3px;
+        border-style: solid;
+        border-image: linear-gradient(to bottom, rgb(182, 244, 146), rgba(0, 0, 0, 0)) 0.5 100%;
+        width: 100%;
+        padding: 20px 0;      
+        font-family: "roboto";
+        text-decoration: none;
+        color: black; 
+        transition: 0.5s;
+           
+            &:hover{
+                color:rgb(51, 139, 147)
+            }
+       
+    }
+}
