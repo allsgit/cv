@@ -1,3 +1,6 @@
+@import "./_timeline.scss";
+@import "./_switch.scss";
+
 .page-wrap {
     height: 100vh;
     width: 100vw;
@@ -18,8 +21,19 @@ body{
 }
 header{
     border-radius: 6px;
-    z-index: 100000;
+    z-index: 100;   
+    animation: 0.5s navLoad forwards;
+    transform: translateX(-200px);
 }
+@keyframes navLoad {
+    from{
+        transform: translateX(200px);
+    }
+    to{
+        transform: translateX(0px);
+    }
+    }
+
 .presentation-double{
     position: absolute;
     background-color: green;
@@ -160,12 +174,44 @@ main {
 }
 
 aside {
-    width: 700px;
+    display: flex;
+    justify-content: center;
+    width: 0px;
     background-color: white;
     height: 550px;
     border-top-right-radius: 5px;
     border-bottom-right-radius: 5px;
     z-index: 100;
+    animation: 1s forwards;
+    overflow-x: scroll;
+    overflow-y: hidden;
+     h2{
+
+     }
+}
+@keyframes aside_Load {
+    0%{
+        opacity: 0;
+        width: 0px;
+    }
+    90%{
+        width: 750px;
+    }
+    100%{
+        opacity: 1;
+        width: 700px;
+    }
+}
+@keyframes aside_deload {
+    0%{
+        opacity: 1;
+        width: 700px;
+    }
+    100%{
+        opacity: 0;
+        width: -3px;
+        transform: translateY(-5px);
+    }
 }
 
 .contact-bloc {
@@ -195,3 +241,60 @@ aside {
        
     }
 }
+
+
+nav.loader{
+    background-color: red;
+}
+
+.fadein {
+    opacity: 0;
+    transition: opacity 1.5s;
+    background-color: red;
+}
+
+.mode{
+    position: absolute;
+    top: 8px;
+    left: 58px;
+    text-decoration: none;
+}
+
+
+// parcours div //
+.portFolio{
+    display: none;
+}
+.parcour-div-main{
+
+    
+    width: 100%;
+    height: 100%;
+    background-color: #ffffff;
+    animation: 4s;
+    display: none;
+        .firstxp{
+            display: flex;
+    
+            width: 100%;
+            height: 200px;
+            overflow: hidden;
+            background-color: lightblue;
+            .timelinebloc{
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                margin-top: 17px;
+                .round{
+                    margin: 0;
+                }
+
+                .timeline-red{
+                    margin: 0 20px;
+                    width: 2px;
+                    height: 100px;
+                    background-color: red;
+                }            }
+       
+        }
+  }

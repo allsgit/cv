@@ -1,3 +1,93 @@
+#timeline {
+  position: relative;
+  width: 70%;
+  max-width: 800px;
+}
+
+span {
+  position: relative;
+  float: right;
+  height: 10px;
+  width: 10px;
+  margin-right: 0;
+  margin-left: 32.5px;
+  border-radius: 100%;
+  background: white;
+  display: block;
+  z-index: 2;
+  border: 5px solid tomato;
+}
+
+.red span {
+  border: 5px solid #FF9D87;
+}
+
+h2 {
+  position: relative;
+  font-size: 1.4em;
+  line-height: 1.2em;
+  font-weight: 400;
+  color: gray;
+}
+
+h2 img {
+  width: 30px;
+  height: 30px;
+}
+
+html {
+  background: #878476;
+}
+
+header {
+  position: relative;
+}
+
+.container {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  height: 40px;
+  margin: auto;
+  text-align: center;
+}
+
+/** Switch
+   -------------------------------------*/
+.switch input {
+  position: absolute;
+  opacity: 0;
+}
+
+/**
+   * 1. Adjust this to size
+   */
+.switch {
+  display: inline-block;
+  font-size: 20px;
+  /* 1 */
+  height: 1em;
+  width: 2em;
+  background: #BDB9A6;
+  border-radius: 1em;
+}
+
+.switch div {
+  height: 1em;
+  width: 1em;
+  border-radius: 1em;
+  background: #FFF;
+  -webkit-box-shadow: 0 0.1em 0.3em rgba(0, 0, 0, 0.3);
+          box-shadow: 0 0.1em 0.3em rgba(0, 0, 0, 0.3);
+  -webkit-transition: all 300ms;
+  transition: all 300ms;
+}
+
+.switch input:checked + div {
+  -webkit-transform: translate3d(100%, 0, 0);
+  transform: translate3d(100%, 0, 0);
+}
+
 .page-wrap {
   height: 100vh;
   width: 100vw;
@@ -26,7 +116,33 @@ body {
 
 header {
   border-radius: 6px;
-  z-index: 100000;
+  z-index: 100;
+  -webkit-animation: 0.5s navLoad forwards;
+          animation: 0.5s navLoad forwards;
+  -webkit-transform: translateX(-200px);
+          transform: translateX(-200px);
+}
+
+@-webkit-keyframes navLoad {
+  from {
+    -webkit-transform: translateX(200px);
+            transform: translateX(200px);
+  }
+  to {
+    -webkit-transform: translateX(0px);
+            transform: translateX(0px);
+  }
+}
+
+@keyframes navLoad {
+  from {
+    -webkit-transform: translateX(200px);
+            transform: translateX(200px);
+  }
+  to {
+    -webkit-transform: translateX(0px);
+            transform: translateX(0px);
+  }
 }
 
 .presentation-double {
@@ -230,12 +346,76 @@ main .online-reseau img:hover {
 }
 
 aside {
-  width: 700px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 0px;
   background-color: white;
   height: 550px;
   border-top-right-radius: 5px;
   border-bottom-right-radius: 5px;
   z-index: 100;
+  -webkit-animation: 1s forwards;
+          animation: 1s forwards;
+  overflow-x: scroll;
+  overflow-y: hidden;
+}
+
+@-webkit-keyframes aside_Load {
+  0% {
+    opacity: 0;
+    width: 0px;
+  }
+  90% {
+    width: 750px;
+  }
+  100% {
+    opacity: 1;
+    width: 700px;
+  }
+}
+
+@keyframes aside_Load {
+  0% {
+    opacity: 0;
+    width: 0px;
+  }
+  90% {
+    width: 750px;
+  }
+  100% {
+    opacity: 1;
+    width: 700px;
+  }
+}
+
+@-webkit-keyframes aside_deload {
+  0% {
+    opacity: 1;
+    width: 700px;
+  }
+  100% {
+    opacity: 0;
+    width: -3px;
+    -webkit-transform: translateY(-5px);
+            transform: translateY(-5px);
+  }
+}
+
+@keyframes aside_deload {
+  0% {
+    opacity: 1;
+    width: 700px;
+  }
+  100% {
+    opacity: 0;
+    width: -3px;
+    -webkit-transform: translateY(-5px);
+            transform: translateY(-5px);
+  }
 }
 
 .contact-bloc {
@@ -276,5 +456,71 @@ aside {
 
 .contact-bloc a:hover {
   color: #338b93;
+}
+
+nav.loader {
+  background-color: red;
+}
+
+.fadein {
+  opacity: 0;
+  -webkit-transition: opacity 1.5s;
+  transition: opacity 1.5s;
+  background-color: red;
+}
+
+.mode {
+  position: absolute;
+  top: 8px;
+  left: 58px;
+  text-decoration: none;
+}
+
+.portFolio {
+  display: none;
+}
+
+.parcour-div-main {
+  width: 100%;
+  height: 100%;
+  background-color: #ffffff;
+  -webkit-animation: 4s;
+          animation: 4s;
+  display: none;
+}
+
+.parcour-div-main .firstxp {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  height: 200px;
+  overflow: hidden;
+  background-color: lightblue;
+}
+
+.parcour-div-main .firstxp .timelinebloc {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-top: 17px;
+}
+
+.parcour-div-main .firstxp .timelinebloc .round {
+  margin: 0;
+}
+
+.parcour-div-main .firstxp .timelinebloc .timeline-red {
+  margin: 0 20px;
+  width: 2px;
+  height: 100px;
+  background-color: red;
 }
 /*# sourceMappingURL=style.css.map */

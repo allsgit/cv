@@ -1,0 +1,55 @@
+$red: #FF9D87;
+$blue: #71C5DF;
+$green: #84C6A2;
+$space2border: 40px;
+$border-width: 5px;
+$spansize: 10px;
+$text-color: black;
+
+
+
+#timeline{
+  position: relative;
+  width: 70%;
+  max-width: 800px;
+  }
+
+
+span{
+  position: relative;
+  float: right;
+  height: $spansize;
+  width: $spansize;
+  margin-right: 0;
+  margin-left: $space2border - $border-width * 1.5;
+  border-radius: 100%;
+  background: white;
+  display: block;
+  z-index: 2;
+  border: $border-width solid tomato;
+  }
+
+
+
+
+
+.red span {border: $border-width solid $red;}
+
+
+
+
+
+h2{
+  position: relative;
+  font-size: 1.4em;
+  line-height: 1.2em;
+  font-weight: 400;
+  color: lighten($text-color, 50%);
+  img{
+      width: 30px;
+      height: 30px;
+  }
+  }
+
+
+
