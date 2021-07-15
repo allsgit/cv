@@ -6,6 +6,7 @@
 
 span {
   position: relative;
+  top: 20px;
   float: right;
   height: 10px;
   width: 10px;
@@ -104,6 +105,14 @@ header {
           justify-content: center;
   font-family: "roboto";
   overflow-y: hidden;
+}
+
+.job-explain {
+  margin-right: 30px;
+}
+
+.job-explain h3 {
+  margin-top: 20px;
 }
 
 body {
@@ -309,6 +318,7 @@ main .profil {
   width: 500px;
   height: 400px;
   overflow: hidden;
+  position: relative;
 }
 
 main .profil img {
@@ -366,6 +376,7 @@ aside {
 
 @-webkit-keyframes aside_Load {
   0% {
+    height: 0px;
     opacity: 0;
     width: 0px;
   }
@@ -373,6 +384,7 @@ aside {
     width: 750px;
   }
   100% {
+    height: 100vh;
     opacity: 1;
     width: 700px;
   }
@@ -380,6 +392,7 @@ aside {
 
 @keyframes aside_Load {
   0% {
+    height: 0px;
     opacity: 0;
     width: 0px;
   }
@@ -387,6 +400,7 @@ aside {
     width: 750px;
   }
   100% {
+    height: 100vh;
     opacity: 1;
     width: 700px;
   }
@@ -396,8 +410,10 @@ aside {
   0% {
     opacity: 1;
     width: 700px;
+    height: 100vh;
   }
   100% {
+    height: 0vh;
     opacity: 0;
     width: -3px;
     -webkit-transform: translateY(-5px);
@@ -409,8 +425,10 @@ aside {
   0% {
     opacity: 1;
     width: 700px;
+    height: 100vh;
   }
   100% {
+    height: 0vh;
     opacity: 0;
     width: -3px;
     -webkit-transform: translateY(-5px);
@@ -431,6 +449,23 @@ aside {
   width: 100%;
   margin-top: 26px;
   padding: 0 1px;
+  position: relative;
+}
+
+.contact-bloc .leave-message {
+  z-index: 100000000000;
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  left: 20px;
+  bottom: 15px;
+  -webkit-animation: highlighter 0.5s alternate infinite;
+          animation: highlighter 0.5s alternate infinite;
+}
+
+.contact-bloc .leave-message .img {
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 
 .contact-bloc a {
@@ -487,6 +522,8 @@ nav.loader {
   -webkit-animation: 4s;
           animation: 4s;
   display: none;
+  overflow: scroll;
+  position: relative;
 }
 
 .parcour-div-main .firstxp {
@@ -496,7 +533,6 @@ nav.loader {
   width: 100%;
   height: 200px;
   overflow: hidden;
-  background-color: lightblue;
 }
 
 .parcour-div-main .firstxp .timelinebloc {
@@ -510,7 +546,7 @@ nav.loader {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  margin-top: 17px;
+  height: 800px;
 }
 
 .parcour-div-main .firstxp .timelinebloc .round {
@@ -520,7 +556,50 @@ nav.loader {
 .parcour-div-main .firstxp .timelinebloc .timeline-red {
   margin: 0 20px;
   width: 2px;
-  height: 100px;
+  height: 400px;
   background-color: red;
+}
+
+.close {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  outline: none;
+  border: none;
+  -webkit-box-shadow: 6px 2px 15px -8px #000000;
+          box-shadow: 6px 2px 15px -8px #000000;
+  z-index: 1000000000;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+}
+
+.close:hover {
+  background: #B1F092;
+  opacity: 0.7;
+}
+
+@-webkit-keyframes highlighter {
+  0% {
+    -webkit-transform: translateX(-5px);
+            transform: translateX(-5px);
+  }
+  100% {
+    -webkit-transform: translateX(5px);
+            transform: translateX(5px);
+  }
+}
+
+@keyframes highlighter {
+  0% {
+    -webkit-transform: translateX(-5px);
+            transform: translateX(-5px);
+  }
+  100% {
+    -webkit-transform: translateX(5px);
+            transform: translateX(5px);
+  }
 }
 /*# sourceMappingURL=style.css.map */

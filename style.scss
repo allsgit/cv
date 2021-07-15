@@ -8,33 +8,41 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    font-family: "roboto"; 
+    font-family: "roboto";
     overflow-y: hidden;
-
-
 }
-body{
+.job-explain{
+    margin-right: 30px;
+    h3{
+        margin-top: 20px;
+    }
+}
+
+body {
     overflow: hidden;
     box-sizing: border-box;
     padding: 0;
     margin: 0;
 }
-header{
+
+header {
     border-radius: 6px;
-    z-index: 100;   
+    z-index: 100;
     animation: 0.5s navLoad forwards;
     transform: translateX(-200px);
 }
+
 @keyframes navLoad {
-    from{
+    from {
         transform: translateX(200px);
     }
-    to{
+
+    to {
         transform: translateX(0px);
     }
-    }
+}
 
-.presentation-double{
+.presentation-double {
     position: absolute;
     background-color: green;
     opacity: 0.1;
@@ -44,10 +52,12 @@ header{
     border-radius: 5px;
     z-index: 10;
 }
-.presentation{
+
+.presentation {
     z-index: 10000000;
 }
-.bubble2{
+
+.bubble2 {
     width: 100px;
     height: 100px;
     border-radius: 10%;
@@ -58,19 +68,20 @@ header{
     left: 0;
     animation: anim2 13s infinite alternate;
 }
+
 @keyframes anim2 {
     from {
         transform: translateY(200px) rotate(20deg);
-        
-
+      
     }
-    to{
+
+    to {
         transform: translateY(-800px) rotate(100deg);
-
-
+       
     }
 }
-.bubble{
+
+.bubble {
     width: 100px;
     height: 100px;
     border-radius: 10%;
@@ -80,16 +91,17 @@ header{
     bottom: 0;
     animation: anim 12s infinite alternate ease-in-out;
 }
+
 @keyframes anim {
     from {
         transform: translateY(200px);
-
     }
-    to{
-        transform: translateY(-700px);
 
+    to {
+        transform: translateY(-700px);
     }
 }
+
 nav {
     list-style-type: none;
     display: flex;
@@ -100,17 +112,18 @@ nav {
     padding: 20px;
     margin-right: 10px;
 
-    li{
+    li {
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
         margin: 30px 0;
     }
-        img{
-            width: 20px;
-            height: 20px;
-        }
+
+    img {
+        width: 20px;
+        height: 20px;
+    }
 }
 
 main {
@@ -120,8 +133,7 @@ main {
     display: flex;
     border-radius: 5px;
     z-index: 10000;
-    box-shadow: 4px 7px 20px -2px rgba(0,0,0,0.48);
- 
+    box-shadow: 4px 7px 20px -2px rgba(0, 0, 0, 0.48);
 
     .information-candidat {
         display: flex;
@@ -132,6 +144,7 @@ main {
         h2 {
             margin: 0px;
             font-size: 19px;
+         
         }
 
         h1 {
@@ -143,6 +156,7 @@ main {
         width: 500px;
         height: 400px;
         overflow: hidden;
+        position: relative;
 
         img {
             border-radius: 5px;
@@ -153,6 +167,7 @@ main {
             clip-path: polygon(0% 0%, 100% 0%, 100% 95%, 51% 100%, 0% 61%);
             
         }
+
     }
 
     .online-reseau {
@@ -164,7 +179,8 @@ main {
             height: 26px;
             margin: 15px 8px 0;
             transition: 0.5s;
-            &:hover{
+
+            &:hover {
                 opacity: 0.4;
                 color: red;
                 overflow: hidden;
@@ -185,29 +201,37 @@ aside {
     animation: 1s forwards;
     overflow-x: scroll;
     overflow-y: hidden;
-     h2{
 
-     }
+    h2 {}
 }
+
 @keyframes aside_Load {
-    0%{
+    0% {
+        height: 0px;
         opacity: 0;
         width: 0px;
     }
-    90%{
+
+    90% {
         width: 750px;
     }
-    100%{
+
+    100% {
+        height: 100vh;
         opacity: 1;
         width: 700px;
     }
 }
+
 @keyframes aside_deload {
-    0%{
+    0% {
         opacity: 1;
         width: 700px;
+        height: 100vh;
     }
-    100%{
+
+    100% {
+        height: 0vh;
         opacity: 0;
         width: -3px;
         transform: translateY(-5px);
@@ -221,6 +245,21 @@ aside {
     width: 100%;
     margin-top: 26px;
     padding: 0 1px;
+    position: relative;
+    .leave-message{
+        z-index: 100000000000;
+        position: absolute;
+        width: 50px;
+        height: 50px;
+        left: 20px;
+        bottom: 15px;
+        animation: highlighter 0.5s alternate infinite;
+       
+            
+        .img{
+            object-fit: cover;
+        }
+    }
 
     a {
         display: flex;
@@ -229,21 +268,19 @@ aside {
         border-style: solid;
         border-image: linear-gradient(to bottom, rgb(182, 244, 146), rgba(0, 0, 0, 0)) 0.5 100%;
         width: 100%;
-        padding: 20px 0;      
+        padding: 20px 0;
         font-family: "roboto";
         text-decoration: none;
-        color: black; 
+        color: black;
         transition: 0.5s;
-           
-            &:hover{
-                color:rgb(51, 139, 147)
-            }
-       
+
+        &:hover {
+            color: rgb(51, 139, 147);
+        }
     }
 }
 
-
-nav.loader{
+nav.loader {
     background-color: red;
 }
 
@@ -253,48 +290,80 @@ nav.loader{
     background-color: red;
 }
 
-.mode{
+.mode {
     position: absolute;
     top: 8px;
     left: 58px;
     text-decoration: none;
 }
 
-
 // parcours div //
-.portFolio{
+.portFolio {
     display: none;
 }
-.parcour-div-main{
 
-    
+.parcour-div-main {
     width: 100%;
     height: 100%;
     background-color: #ffffff;
     animation: 4s;
     display: none;
-        .firstxp{
-            display: flex;
-    
-            width: 100%;
-            height: 200px;
-            overflow: hidden;
-            background-color: lightblue;
-            .timelinebloc{
-                display: flex;
-                flex-direction: column;
-                align-items: center;
-                margin-top: 17px;
-                .round{
-                    margin: 0;
-                }
+    overflow : scroll;
+    position: relative;
 
-                .timeline-red{
-                    margin: 0 20px;
-                    width: 2px;
-                    height: 100px;
-                    background-color: red;
-                }            }
-       
+    .firstxp {
+        display: flex;
+        width: 100%;
+        height: 200px;      
+        overflow: hidden;
+        .timelinebloc {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            height: 800px;
+
+            .round {
+                margin: 0;
+            }
+
+            .timeline-red {
+                margin: 0 20px;
+                width: 2px;
+                height: 400px;
+                background-color: red;
+            }
         }
-  }
+    }
+}
+
+
+// close btn
+
+// button close
+.close{
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  outline: none;
+  border: none;
+  box-shadow: 6px 2px 15px -8px #000000;
+  z-index: 1000000000;
+  transition: 0.2s;
+   &:hover {
+       background: #B1F092;
+       opacity: 0.7;
+   }
+
+}
+
+@keyframes highlighter {
+    0%{
+        transform: translateX(-5px);
+    }
+    100%{
+        transform: translateX(+5px);
+    }
+}
