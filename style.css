@@ -113,6 +113,54 @@ header {
 
 .job-explain h3 {
   margin-top: 20px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.job-explain button {
+  width: auto;
+  background: white;
+  outline: none;
+  border: 0.2px solid grey;
+  font-family: "roboto";
+  font-weight: bold;
+}
+
+.job-explain h4 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin: 10px;
+}
+
+.job-explain .xplogo {
+  width: 30px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin: 0 0 0 10px;
+}
+
+.job-explain .job-detail {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin: 10px;
+}
+
+.job-explain .job-detail li {
+  margin: 5px 0 0 10px;
 }
 
 body {
@@ -271,6 +319,7 @@ nav li {
       -ms-flex-align: center;
           align-items: center;
   margin: 30px 0;
+  cursor: pointer;
 }
 
 nav img {
@@ -531,8 +580,9 @@ nav.loader {
   display: -ms-flexbox;
   display: flex;
   width: 100%;
-  height: 200px;
+  height: 400px;
   overflow: hidden;
+  margin-bottom: 30px;
 }
 
 .parcour-div-main .firstxp .timelinebloc {
@@ -601,5 +651,53 @@ nav.loader {
     -webkit-transform: translateX(5px);
             transform: translateX(5px);
   }
+}
+
+.bonhomme {
+  width: 500px;
+  height: 500px;
+  background-color: white;
+  margin: 0 auto;
+  -webkit-transform: translateY(20%);
+          transform: translateY(20%);
+}
+
+.bonhomme .tete {
+  position: absolute;
+  width: 250px;
+  height: 200px;
+  border-radius: 40%;
+  background-color: brown;
+}
+
+.bonhomme .tete .yeuxd {
+  height: 20px;
+  width: 20px;
+  border-radius: 50%;
+  background: black;
+  position: absolute;
+  top: 50px;
+  left: 69px;
+}
+
+.bonhomme .tete .yeuxg {
+  height: 20px;
+  width: 20px;
+  border-radius: 50%;
+  background: black;
+  position: absolute;
+  top: 50px;
+  right: 69px;
+}
+
+.bonhomme .tete .nez {
+  height: 50px;
+  width: 100px;
+  border-radius: 50%;
+  background: brown;
+  position: absolute;
+  border: 2px solid black;
+  top: 50px;
+  left: 80px;
 }
 /*# sourceMappingURL=style.css.map */
